@@ -1,0 +1,22 @@
+1. Add css (either through css modules or some other way -
+            figure it out)
+
+2. Style product component with card style
+(either download bootstrap or add your own styles)
+
+3. Style products so they appear side by side (display inline)
+
+4. Add routing
+    a. Add Edit-Product route
+    b. Add Products route
+    c. Add View-Product route
+
+5. Create form based react components for each property of
+product object
+    a. Create and use one for id
+    b. Create and use one for price
+    c. Create and use one for name
+    d. Create and use one for description
+    e. Create and use one for creation date (datepicker?)
+
+6.
