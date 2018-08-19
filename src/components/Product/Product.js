@@ -4,32 +4,43 @@ import classes from './Product.css';
 
 
 const product = ( props ) => {
-    let button = null;
+    let removeButton = null;
     if (props.showProductRemoveButton) {
-        button = <button onClick={() => props.removeClickHandler(props.product.id)}>Remove</button>
+        removeButton = <button className={classes.buttonDanger} onClick={() => props.removeClickHandler(props.product.id)}>Remove</button>
+    }
+    let editButton = null;
+    if (props.showProductEditButton) {
+        editButton = <button className={classes.buttonWarning} onClick={() => props.editClickHandler(props.product.id)}>Edit</button>
     }
     return (
-        <div className={classes.card}>
-            <p>
-                <b>ID: </b> {props.product.id}
-            </p>
+        <div className={classes.Card}>
+            <div onClick={() => props.productClickHandler(props.product.id)}>
+                <p>
+                    <b>ID: </b> {props.product.id}
+                </p>
 
-            <p>
-                <b>Price: </b>{props.product.price}
-            </p>
+                <p>
+                    <b>Price: </b>{props.product.price}
+                </p>
 
-            <p>
-                <b>Name: </b>{props.product.name}
-            </p>
+                <p>
+                    <b>Name: </b>{props.product.name}
+                </p>
 
-            <p>
-                <b>Description: </b>{props.product.desc}
-            </p>
+                <p>
+                    <b>Description: </b>{props.product.desc}
+                </p>
 
-            <p>
-                <b>Creation Date: </b>{props.product.created}
-            </p>
-            {button}
+                <p>
+                    <b>Creation Date: </b>{props.product.created}
+                </p>
+            </div>
+            <span>
+                {removeButton}
+            </span>
+            <span>
+                {editButton}
+            </span>
         </div>
     )
 }

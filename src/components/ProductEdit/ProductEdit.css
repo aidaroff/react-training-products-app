@@ -1,0 +1,19 @@
+.ProductEdit input,
+.ProductEdit textarea,
+.ProductEdit select {
+    display: block;
+    width: 35%;
+    box-sizing: border-box;
+    border: 1px solid black;
+    outline: none;
+    font: inherit;
+    margin: auto;
+}
+
+
+.ProductEdit label {
+    display: block;
+    margin: 10px auto;
+    text-align: center;
+    font-weight: bold;
+}
