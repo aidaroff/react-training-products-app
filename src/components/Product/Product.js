@@ -6,7 +6,7 @@ import classes from './Product.css';
 const product = ( props ) => {
     let removeButton = null;
     if (props.showProductRemoveButton) {
-        removeButton = <button className={classes.buttonDanger} onClick={() => props.removeClickHandler(props.product.id)}>Remove</button>
+        removeButton = <button className={classes.buttonDanger} onClick={props.removeClickHandler}>Remove</button>
     }
     let editButton = null;
     if (props.showProductEditButton) {
