@@ -26,7 +26,7 @@ class ProductEdit extends Component {
     }
 
     productId = this.props.match.params.id
-    product = this.props.products.find( product => product.id === this.productId);
+    product = this.props.location.product || this.props.products.find(product => product.id === this.props.match.params.id);
 
     render () {
         return (
@@ -58,7 +58,7 @@ class ProductEdit extends Component {
                         onChange={this.updateDesc}></textarea>
                 </div>
                 <div>
-                    <button type="submit" onClick={() => this.props.editProduct(this.productId, this.newProperties, this.props.history) }>Submit the form</button>
+                    <button className={classes.buttonSubmit} type="submit" onClick={() => this.props.editProduct(this.productId, this.newProperties, this.props.history) }>Submit the form</button>
                 </div>
             </div>
         )

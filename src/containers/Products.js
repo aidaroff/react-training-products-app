@@ -10,13 +10,20 @@ import classes from './Products.css';
 
 class Products extends Component {
 
-    selectProduct = ( id ) => {
+    findProduct = ( id ) => {
         const state = this.props;
-        this.props.history.push({pathname: '/products/' + id, state: {...state}})
+        const product = state.products.find(product => product.id === id);
+        return product;
+    };
+
+    selectProduct = ( id ) => {
+        const product = this.findProduct(id);
+        this.props.history.push({pathname: '/products/' + id, product: {...product}})
     };
 
     editProductClick = ( id ) => {
-        this.props.history.push({pathname: '/products/' + id + '/edit'})
+        const product = this.findProduct(id);
+        this.props.history.push({pathname: '/products/' + id + '/edit', product: {...product}})
     };
 
     render () {
