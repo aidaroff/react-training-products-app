@@ -52,14 +52,15 @@ const reducer = (state = initialState, action) => {
         case actionTypes.EDITPRODUCT:
             const productId = action.productId;
             const newProperties = action.newProperties;
-            const productsCopy = {...state.products};
+            const productsCopy = [...state.products];
             const productIndex = state.products.findIndex(product => product.id === productId)
             const productCopy = {...state.products[productIndex], ...newProperties};
-            console.log('printing copied product: ', productCopy);
+
             productsCopy[productIndex] = productCopy;
-            return {
+            const newState = {
                 products: productsCopy
             }
+            return newState
 
     }
     return state;

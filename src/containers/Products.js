@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { withRouter } from 'react-router'
+import { withRouter } from 'react-router';
 import { connect } from 'react-redux';
 
 import Product from '../components/Product/Product';
@@ -10,13 +10,16 @@ import classes from './Products.css';
 
 class Products extends Component {
 
-    selectProduct = (id) => {
+    selectProduct = ( id ) => {
         const state = this.props;
         this.props.history.push({pathname: '/products/' + id, state: {...state}})
-    }
+    };
+
+    editProductClick = ( id ) => {
+        this.props.history.push({pathname: '/products/' + id + '/edit'})
+    };
 
     render () {
-        console.log(this.props);
         return (
             <div className={classes.Cards}>
                 {this.props.products.map(product => (
