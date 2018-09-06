@@ -26,6 +26,8 @@ class Products extends Component {
         this.props.history.push({pathname: '/products/' + id + '/edit', product: {...product}})
     };
 
+    navigateToAddProd = () => this.props.history.push({pathname: '/products/add'})
+
     render () {
         return (
             <div className={classes.Cards}>
@@ -41,6 +43,8 @@ class Products extends Component {
                         editClickHandler={this.editProductClick}
                     />
                 ))}
+                <br/>
+                <button className={classes.buttonAdd} onClick={this.navigateToAddProd}>Press to add new product</button>
             </div>
         )
     }

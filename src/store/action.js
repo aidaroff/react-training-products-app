@@ -11,3 +11,9 @@ export const editProd = ( id, newProperties, history ) => {
     store.dispatch(editProdAction);
     history.push({pathname: '/'})
 }
+
+export const addProd = ( newProduct, history ) => {
+    const addProdAction = {type: actionTypes.ADDPRODUCT, newProduct: newProduct};
+    store.dispatch(addProdAction);
+    history.push({pathname: '/'})
+}

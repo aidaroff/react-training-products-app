@@ -1,2 +1,3 @@
 export const REMOVEPRODUCT = 'REMOVEPRODUCT';
 export const EDITPRODUCT = 'EDITPRODUCT';
+export const ADDPRODUCT = 'ADDPRODUCT';

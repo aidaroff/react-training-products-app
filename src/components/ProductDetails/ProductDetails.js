@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import Product from '../Product/Product'
 
 const productDetails = ( props ) => {
-    const product = props.products.find(product => product.id === props.match.params.id);
+    const product = props.products.find(product => product.id == props.match.params.id);
     return (
         <div>
             <h1>You're viewing {product.name}</h1>

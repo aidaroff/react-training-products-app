@@ -5,6 +5,7 @@ import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
 import Products from './containers/Products';
 import ProductDetails from './components/ProductDetails/ProductDetails';
 import ProductEdit from './components/ProductEdit/ProductEdit';
+import ProductAdd from './components/ProductAdd/ProductAdd';
 
 import logo from './logo.svg';
 import classes from './App.css';
@@ -21,6 +22,7 @@ class App extends Component {
           </header>
           <Switch>
             <Route path="/products/:id/edit" component={ProductEdit}></Route>
+            <Route path="/products/add" render={ProductAdd}></Route>
             <Route path="/products/:id" render={ProductDetails}></Route>
             <Route path="/" render={Products}></Route>
           </Switch>

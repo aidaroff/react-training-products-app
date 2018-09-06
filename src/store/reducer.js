@@ -62,6 +62,16 @@ const reducer = (state = initialState, action) => {
             }
             return newState
 
+        case actionTypes.ADDPRODUCT:
+            const newProduct = action.newProduct;
+            newProduct['id'] = Math.floor(Math.random() * 255);
+            const today  = new Date();
+            newProduct['created'] = today.toLocaleDateString("en-GB").split('/').join('-')
+            const newState1 = {
+                products: [...state.products, newProduct]
+            }
+            return newState1
+
     }
     return state;
 };

@@ -3,41 +3,37 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router'
 
 import * as actions from '../../store/action';
-import classes from './ProductEdit.css';
+import classes from './ProductAdd.css';
 
 
-class ProductEdit extends Component {
-    newProperties = {
+class ProductAdd extends Component {
+    newObject = {
         price: 0,
         name: '',
         desc: ''
     }
 
     updatePrice = (event) => {
-        this.newProperties.price = event.target.value;
+        this.newObject.price = event.target.value;
     }
 
     updateName = (event) => {
-        this.newProperties.name = event.target.value;
+        this.newObject.name = event.target.value;
     }
 
     updateDesc = (event) => {
-        this.newProperties.desc = event.target.value;
+        this.newObject.desc = event.target.value;
     }
-
-    productId = this.props.match.params.id
-    product = this.props.location.product || this.props.products.find(product => product.id === this.props.match.params.id);
 
     render () {
         return (
-            <div className={classes.ProductEdit}>
-                <h1>You're editing: {this.product.name}</h1>
+            <div className={classes.ProductAdd}>
+                <h1>New Product</h1>
                 <div>
                     <label htmlFor="price">Price: </label>
                     <input
                         type="text"
                         id="price"
-                        placeholder={this.product.price}
                         onChange={this.updatePrice}/>
                 </div>
                 <div>
@@ -45,7 +41,6 @@ class ProductEdit extends Component {
                     <input
                         type="text"
                         id="name"
-                        placeholder={this.product.name}
                         onChange={this.updateName}/>
                 </div>
                 <div>
@@ -54,11 +49,10 @@ class ProductEdit extends Component {
                         type="text"
                         id="desc"
                         rows="10"
-                        placeholder={this.product.desc}
                         onChange={this.updateDesc}></textarea>
                 </div>
                 <div>
-                    <button className={classes.buttonSubmit} type="submit" onClick={() => this.props.editProduct(this.productId, this.newProperties, this.props.history) }>Submit the form</button>
+                    <button className={classes.buttonSubmit} type="submit" onClick={() => this.props.addProduct(this.newObject, this.props.history) }>Add this product</button>
                 </div>
             </div>
         )
@@ -73,9 +67,9 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        editProduct: ( id, newProperties, history ) => actions.editProd(id, newProperties, history),
+        addProduct: ( newObject, history ) => actions.addProd( newObject, history )
     }
 }
 
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ProductEdit));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ProductAdd));

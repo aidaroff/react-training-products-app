@@ -1,0 +1,48 @@
+.ProductAdd input,
+.ProductAdd textarea,
+.ProductAdd select {
+    display: block;
+    width: 35%;
+    box-sizing: border-box;
+    border: 1px solid black;
+    outline: none;
+    font: inherit;
+    margin: auto;
+}
+
+
+.ProductAdd label {
+    display: block;
+    margin: 10px auto;
+    text-align: center;
+    font-weight: bold;
+}
+
+.buttonSubmit {
+    border-radius: 4px;
+    display: inline-block;
+    border: none;
+    padding: 1rem 2rem;
+    margin: 5px 5px;
+    textDecoration: none;
+    background: #339e12;
+    color: #ffffff;
+    font-family: sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out,
+                transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.buttonSubmit:hover,
+.buttonSubmit:focus {
+    background: #236b0d;
+}
+
+.buttonSubmit:focus {
+    outline: 1px solid #fff;
+    outline-offset: -4px;
+}
