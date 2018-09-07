@@ -9,7 +9,7 @@ const productDetails = ( props ) => {
     return (
         <div>
             <h1>You're viewing {product.name}</h1>
-            <Product product={product} showProductRemoveButton={false}/>
+            <Product product={product} enableClick={false} showProductRemoveButton={false}/>
         </div>
     )
 }

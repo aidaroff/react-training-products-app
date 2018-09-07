@@ -14,7 +14,7 @@ const product = ( props ) => {
     }
     return (
         <div className={classes.Card}>
-            <div onClick={() => props.productClickHandler(props.product.id)}>
+            <div onClick={props.enableClick ? () => props.productClickHandler(props.product.id) : null}>
                 <p>
                     <b>ID: </b> {props.product.id}
                 </p>

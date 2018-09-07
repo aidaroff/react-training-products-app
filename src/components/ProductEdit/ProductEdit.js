@@ -7,10 +7,13 @@ import classes from './ProductEdit.css';
 
 
 class ProductEdit extends Component {
+    productId = this.props.match.params.id
+    product = this.props.location.product || this.props.products.find(product => product.id === this.props.match.params.id);
+
     newProperties = {
-        price: 0,
-        name: '',
-        desc: ''
+        price: this.product.price,
+        name: this.product.name,
+        desc: this.product.desc
     }
 
     updatePrice = (event) => {
@@ -24,9 +27,6 @@ class ProductEdit extends Component {
     updateDesc = (event) => {
         this.newProperties.desc = event.target.value;
     }
-
-    productId = this.props.match.params.id
-    product = this.props.location.product || this.props.products.find(product => product.id === this.props.match.params.id);
 
     render () {
         return (

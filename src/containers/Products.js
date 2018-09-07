@@ -41,6 +41,7 @@ class Products extends Component {
                         removeClickHandler={() => this.props.removeProduct(product.id)}
                         productClickHandler={this.selectProduct}
                         editClickHandler={this.editProductClick}
+                        enableClick={true}
                     />
                 ))}
                 <br/>
